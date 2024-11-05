@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
 const PasswordRecoveryPage = ({ navigation, registeredUser, setRegisteredUser }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState(''); // Changed username to email
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
   const handlePasswordReset = () => {
-    if (!username || !newPassword || !confirmNewPassword) {
+    if (!email || !newPassword || !confirmNewPassword) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
 
-    if (username !== registeredUser.username) {
-      Alert.alert('Error', 'Username not found');
+    if (email !== registeredUser.email) {
+      Alert.alert('Error', 'Email not found');
       return;
     }
 
@@ -33,9 +33,9 @@ const PasswordRecoveryPage = ({ navigation, registeredUser, setRegisteredUser })
     <View style={styles.container}>
       <Text style={styles.title}>Password Recovery</Text>
       <TextInput
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
+        placeholder="Email"  // Updated placeholder
+        value={email}
+        onChangeText={setEmail}
         style={styles.input}
       />
       <TextInput

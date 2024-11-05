@@ -62,7 +62,7 @@ const RegisterPage = ({ navigation, setRegisteredUser }) => {
         secureTextEntry
       />
       <TouchableOpacity onPress={handleRegister} style={styles.registerButton}>
-        <Text style={styles.registerButtonText}>Register</Text>
+        <Text style={styles.registerButtonText}>Create Account</Text>
       </TouchableOpacity>
     </View>
   );
